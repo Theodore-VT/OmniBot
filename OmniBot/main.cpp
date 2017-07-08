@@ -11,6 +11,7 @@ int main()
 	Computer computer;
 	Robot robot;
 
+
 	while(robot.IsConnected())
 	{
 		
