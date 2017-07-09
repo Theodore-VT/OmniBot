@@ -47,7 +47,7 @@ namespace SubSystem
 	struct Vector
 	{
 		Vector(double angle, double val){};
-		Vector(){};
+		Vector(){Angle = 0; Val = 0;};
 		double Angle;
 		double Val;
 	};
@@ -55,8 +55,9 @@ namespace SubSystem
 	struct Line
 	{
 		Line(double coef, double const_){Coef = coef; Const = const_;};
-		Line(Vector){};
-		Line(){};
+		Line(Point point1, Point point2);
+		Line(Vector);//Assume the vectors pass by (0,0)
+		Line(){Coef = 0; Const = 0;};
 		double Coef;
 		double Const;
 	};
@@ -64,8 +65,8 @@ namespace SubSystem
 	struct Point
 	{
 		Point(double x, double y){X = x, Y = y;};
-		Point(Vector){};
-		Point();
+		Point(Vector){};//Assume the vector pass by (0, 0)
+		Point(){X = 0; Y = 0;};
 
 		double X;
 		double Y;

@@ -1,5 +1,7 @@
 #include "SubSystem.h"
 
+#define PI 3.141592
+
 namespace SubSystem
 {
 	PosControl::PosControl(Specs specs)
@@ -23,5 +25,33 @@ namespace SubSystem
 			TempVector.Val = this->Dist_LinePoint(Line(GlobalVector), Point(m_WheelPos[i]));
 		}
 	}
+
+	double PosControl::Dist_LinePoint(Line line, Point point)
+	{
+		
+	}
+
+	Line::Line(Vector vector)//vector pass by (0, 0)
+	{
+		Point point1(vector), point2(0, 0);
+
+		Coef = point2.Y / point2.X;
+
+		Const = 0;
+	}
+
+	Line::Line(Point point1, Point point2)
+	{
+		Coef = (point1.Y - point2.Y) / (point1.X - point2.X);//delta af vals
+
+		Const = point2.Y - point2.X * Coef;
+	}
+
+	Point::Point(Vector vector)
+	{
+		X = vector.Val * std::cos(vector.Angle * PI / 180);
+		Y = vector.Val * std::sin(vector.Angle * PI / 180);
+	}
 };
+
 
