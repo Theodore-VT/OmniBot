@@ -11,35 +11,10 @@ namespace SubSystem
 	struct Line;
 	struct Point;
 
-	class Radio
-	{
-		Radio(std::string ip);
-		~Radio();
-
-		bool Isconnected();
-		void Update();
-	};
-
-	class PosControl
-	{
-	public:
-		PosControl(Specs specs);
-		~PosControl();
-
-		std::vector<Vector> CalcVects(Vector);
-	private:
-		double Dist_LinePoint(Line &line, Point &point);
-		double NegInv(double number){return -(1 / number);};
-		Point LineInter(Line line1, Line line2);
-
-		std::vector<Vector> m_WheelPos;
-
-		Specs m_specs;
-	};
-
 	struct Specs
 	{
-		Specs(double diam, double wheelNumer, double angle);
+		//Specs(double diam, double wheelNumer, double angle);
+		Specs(){Diam_mm = 200; Angle = 60; WheelNumber = 3;};
 		double Diam_mm;//distance between the wheels and the center (assuming they are at equal dstance)
 		double Angle;//Angle between different wheels -> deduce number of wheels
 		double WheelNumber;
@@ -72,4 +47,32 @@ namespace SubSystem
 		double X;
 		double Y;
 	};
+
+	class Radio
+	{
+		Radio(std::string ip);
+		~Radio();
+
+		bool Isconnected();
+		void Update();
+	};
+
+	class PosControl
+	{
+	public:
+		PosControl(Specs specs);
+		~PosControl();
+
+		std::vector<Vector> CalcVects(Vector);
+	private:
+		double Dist_LinePoint(Line &line, Point &point);
+		double NegInv(double number){return -(1 / number);};
+		Point LineInter(Line line1, Line line2);
+
+		std::vector<Vector> m_WheelPos;
+
+		Specs m_specs;
+	};
+
+
 };

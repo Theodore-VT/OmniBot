@@ -21,9 +21,10 @@ namespace SubSystem
 
 		for(int i = 0; i < m_specs.WheelNumber; ++i)
 		{
-			Vector TempVector;
-			TempVector.Val = this->Dist_LinePoint(Line(GlobalVector), Point(m_WheelPos[i]));
+			vectors.push_back(Vector(0.0, this->Dist_LinePoint(Line(GlobalVector), Point(m_WheelPos[i]))));
 		}
+
+		return vectors;
 	}
 
 	double PosControl::Dist_LinePoint(Line &line, Point &point)
@@ -82,11 +83,7 @@ namespace SubSystem
 		Const = point2.Y - point2.X * Coef;
 	}
 
-	Point::Point(Vector vector)
-	{
-		X = vector.Val * std::cos(vector.Angle * PI / 180);
-		Y = vector.Val * std::sin(vector.Angle * PI / 180);
-	}
+
 };
 
 
