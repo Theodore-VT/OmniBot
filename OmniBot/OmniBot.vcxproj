@@ -74,7 +74,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Computer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Robot.cpp" />
+    <ClCompile Include="SubSystem.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Computer.h" />
+    <ClInclude Include="IncludesFile.h" />
+    <ClInclude Include="Robot.h" />
+    <ClInclude Include="SubSystem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

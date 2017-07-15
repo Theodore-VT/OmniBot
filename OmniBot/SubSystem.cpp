@@ -26,10 +26,45 @@ namespace SubSystem
 		}
 	}
 
-	double PosControl::Dist_LinePoint(Line line, Point point)
-	{
+	double PosControl::Dist_LinePoint(Line &line, Point &point)
+{
+	Line Perp(0, 0);
+	Point Inter(0, 0);
+
+	if(line.Coef != 0)
+		Perp.Coef = this->NegInv(line.Coef);
+
+	std::cout<<"P Slope : "<<Perp.Coef<<"\n";
+	Perp.Const = point.Y - (point.X * Perp.Coef);
+	std::cout<<"P Const : "<<Perp.Const<<"\n";
+	double TempX;
+
+	line.Coef *= 1000;
+	line.Const *= 1000;
+	Perp.Const *= 1000;
+	Perp.Coef *= 1000;
+
+	int deltaCoef = (int(line.Coef) - int(Perp.Coef)) ? (int(line.Coef) - int(Perp.Coef)) > 0 : 1;
+
+	TempX = (int(line.Const) - int(Perp.Const)) / deltaCoef;
+
 		
-	}
+	line.Coef /= 1000;
+	line.Const /= 1000;
+	Perp.Const /= 1000;
+	Perp.Coef /= 1000;
+
+	TempX /= 1000;
+
+	Inter.Y = Perp.Const;
+	Inter.X = TempX;
+
+	std::cout<<"Inter : "<<Inter.X<<",  "<<Inter.Y<<"\n";
+
+	double Dist = std::sqrtf(std::powf((Inter.Y - point.Y), 2) + std::powf((Inter.X - point.X), 2)); 
+
+	return Dist;
+}
 
 	Line::Line(Vector vector)//vector pass by (0, 0)
 	{

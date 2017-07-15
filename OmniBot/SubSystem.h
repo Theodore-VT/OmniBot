@@ -28,8 +28,9 @@ namespace SubSystem
 
 		std::vector<Vector> CalcVects(Vector);
 	private:
-		double Dist_LinePoint(Line line, Point point);
-		double NegInv(double number){return 1 / number;};
+		double Dist_LinePoint(Line &line, Point &point);
+		double NegInv(double number){return -(1 / number);};
+		Point LineInter(Line line1, Line line2);
 
 		std::vector<Vector> m_WheelPos;
 
