@@ -10,19 +10,72 @@ bool operator ==(Vector vec1, Vector vec2)
 
 Robot::Robot()
 {
+
 }
 
 
 Robot::~Robot()
 {
+
 }
 
 void Robot::Run()
 {
+	static int STATE_MACHINE = GET_GOAL;
+
+	switch(STATE_MACHINE)
+	{
+		case GET_GOAL:
+		{
+			m_dir = this->GetComm();
+			STATE_MACHINE = SEND_DATA;
+			
+			break;
+		}
+		
+		case SEND_DATA:
+		{
+			this->SendArduino("AD=", m_dir.Angle);
+			this->SendArduino("VD=", m_dir.Val);
+			STATE_MACHINE = RETRIEVE_DATA;
+
+			break;
+		}
+
+		case RETRIEVE_DATA:
+		{
+			
+		}
+
+		case DATA_ANALITIC:
+		{
+		
+		}
+
+		case ON_FIRE:
+		{
+		
+		}
+
+		case ON_BACK:
+		{
+		
+		}
+
+		case MOTOR_DOWN:
+		{
+		
+		}
+
+		case NOT_ON_GROUND:
+		{
+		
+		}
+	}
 	
 }
 
-void Robot::GetComm()
+Vector Robot::GetComm()
 {
 	Vector Null_Vec;
 	Vector Dir;
@@ -46,6 +99,6 @@ void Robot::GetComm()
 		Comm.close();
 	}
 
-	m_dir = Dir;
+	return Dir;
 }
 

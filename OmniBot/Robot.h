@@ -16,12 +16,15 @@ public:
 
 	void Run();
 
+
 private:
 
+	void Update();
 	void Move(Vector vector){};
-	void GetComm();
+	Vector GetComm();
 	void SendArduino(char * name, int val);
 	void ReceiveArduino(State state);
+
 
 	Vector m_dir;
 	State m_state;
