@@ -1,4 +1,5 @@
-#pragma once
+#ifndef SPECS_H
+#define SPECS_H
 
 struct Specs
 {
@@ -8,3 +9,5 @@ struct Specs
 	double Angle;//Angle between different wheels -> deduce number of wheels
 	double WheelNumber;
 };
+
+#endif

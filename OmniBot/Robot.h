@@ -1,26 +1,30 @@
+#ifndef ROBOT_H
+#define ROBOT_H
+
 #include "IncludesFile.h"
 #include "Vector.h"
 #include "Point.h"
 #include "Specs.h"
 #include "Line.h"
+#include "State.h"
 
-#pragma once
 class Robot
 {
 public:
-	Robot(Specs specs);
+	Robot();
 	~Robot();
 
-	std::vector<Vector> CalcVects(Vector);
+	void Run();
 
 private:
 
-	double Dist_LinePoint(Line &line, Point &point);
-	double NegInv(double number){return -(1 / number);};
-	Point LineInter(Line line1, Line line2);
+	void Move(Vector vector){};
+	void GetComm();
+	void SendArduino(char * name, int val);
+	void ReceiveArduino(State state);
 
-	std::vector<Vector> m_WheelPos;
-
-	Specs m_specs;
+	Vector m_dir;
+	State m_state;
 };
 
+#endif

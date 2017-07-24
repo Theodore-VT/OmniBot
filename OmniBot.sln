@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OmniBot", "OmniBot\OmniBot.vcxproj", "{E02BB663-9A88-4814-8663-0AE496A73386}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OmniBot", "OmniBot\OmniBot.vcxproj", "{2B668AB8-ACDB-46A7-9508-463FD59B0E84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E02BB663-9A88-4814-8663-0AE496A73386}.Debug|Win32.ActiveCfg = Debug|Win32
-		{E02BB663-9A88-4814-8663-0AE496A73386}.Debug|Win32.Build.0 = Debug|Win32
-		{E02BB663-9A88-4814-8663-0AE496A73386}.Release|Win32.ActiveCfg = Release|Win32
-		{E02BB663-9A88-4814-8663-0AE496A73386}.Release|Win32.Build.0 = Release|Win32
+		{2B668AB8-ACDB-46A7-9508-463FD59B0E84}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2B668AB8-ACDB-46A7-9508-463FD59B0E84}.Debug|Win32.Build.0 = Debug|Win32
+		{2B668AB8-ACDB-46A7-9508-463FD59B0E84}.Release|Win32.ActiveCfg = Release|Win32
+		{2B668AB8-ACDB-46A7-9508-463FD59B0E84}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

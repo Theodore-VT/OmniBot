@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{E02BB663-9A88-4814-8663-0AE496A73386}</ProjectGuid>
+    <ProjectGuid>{2B668AB8-ACDB-46A7-9508-463FD59B0E84}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>OmniBot</RootNamespace>
   </PropertyGroup>
@@ -74,16 +74,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Computer.cpp" />
+    <ClCompile Include="Line.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Robot.cpp" />
-    <ClCompile Include="SubSystem.cpp" />
+    <ClCompile Include="State.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Computer.h" />
     <ClInclude Include="IncludesFile.h" />
+    <ClInclude Include="Line.h" />
+    <ClInclude Include="Point.h" />
     <ClInclude Include="Robot.h" />
-    <ClInclude Include="SubSystem.h" />
+    <ClInclude Include="Specs.h" />
+    <ClInclude Include="State.h" />
+    <ClInclude Include="Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

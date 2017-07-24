@@ -1,6 +1,7 @@
-#include "Vector.h"
+#ifndef POINT_H
+#define POINT_H
 
-#pragma once
+#include "Vector.h"
 
 
 struct Point
@@ -12,3 +13,5 @@ struct Point
 	double X;
 	double Y;
 };
+
+#endif
