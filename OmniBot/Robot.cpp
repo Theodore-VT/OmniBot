@@ -1,4 +1,12 @@
 #include "Robot.h"
+#define GET_GOAL 0
+#define SEND_DATA 1
+#define RETRIEVE_DATA 2
+#define DATA_ANALITIC 3
+#define ON_FIRE 4
+#define MOTOR_DOWN 5
+#define LOW_BATTERY 6
+
 
 bool operator ==(Vector vec1, Vector vec2)
 {
@@ -37,7 +45,7 @@ void Robot::Run()
 		
 		case SEND_DATA:
 		{
-			this->SendArduino("AD=", m_dir.Angle);
+			this->SendArduino("LD=", m_dir.Angle);
 			this->SendArduino("VD=", m_dir.Val);
 			PREV_STATE_MACHINE = STATE_MACHINE;
 			STATE_MACHINE = RETRIEVE_DATA;
@@ -58,13 +66,13 @@ void Robot::Run()
 
 		case DATA_ANALITIC:
 		{
-			static Step = 0;
+			static int Step = 0;
 			
 			if(m_state.IsOnFire && Step == 0)
 			{
 				Step++;
 				PREV_STATE_MACHINE = STATE_MACHINE;
-				STATE_MACHINE = IS_ON_FIRE;
+				STATE_MACHINE = ON_FIRE;
 				break;
 			}
 			
@@ -121,6 +129,11 @@ void Robot::Run()
 				SendArduino("STD", 0); // Shutdown 
 			}
 
+			break;
+		}
+
+		case LAW_BATTERY:
+		{
 			break;
 		}
 	}

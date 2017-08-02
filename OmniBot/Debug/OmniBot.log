@@ -1,13 +1,25 @@
-﻿Build started 2017-07-24 16:25:09.
+﻿Build started 2017-07-27 08:48:28.
      1>Project "C:\Users\16150007\Documents\GitHub\OmniBot\OmniBot\OmniBot.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating "Debug\OmniBot.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching "Debug\OmniBot.unsuccessfulbuild".
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Robot.cpp
          Robot.cpp
-     1>c:\users\16150007\documents\github\omnibot\omnibot\robot.cpp(28): error C2146: syntax error : missing ';' before identifier 'Vector'
+     1>c:\users\16150007\documents\github\omnibot\omnibot\robot.cpp(48): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\16150007\documents\github\omnibot\omnibot\robot.cpp(49): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\16150007\documents\github\omnibot\omnibot\robot.cpp(60): error C2679: binary '=' : no operator found which takes a right-hand operand of type 'State (__cdecl *)(void)' (or there is no acceptable conversion)
+                 c:\users\16150007\documents\github\omnibot\omnibot\state.h(16): could be 'State &State::operator =(const State &)'
+                 while trying to match the argument list '(State, State (__cdecl *)(void))'
+     1>c:\users\16150007\documents\github\omnibot\omnibot\robot.cpp(87): error C2039: 'IsLowBat' : is not a member of 'State'
+                 c:\users\16150007\documents\github\omnibot\omnibot\state.h(9) : see declaration of 'State'
+     1>c:\users\16150007\documents\github\omnibot\omnibot\robot.cpp(105): error C2039: 'CanShutdown' : is not a member of 'Robot'
+                 c:\users\16150007\documents\github\omnibot\omnibot\robot.h(12) : see declaration of 'Robot'
+     1>c:\users\16150007\documents\github\omnibot\omnibot\robot.cpp(120): error C2039: 'CanShutDown' : is not a member of 'Robot'
+                 c:\users\16150007\documents\github\omnibot\omnibot\robot.h(12) : see declaration of 'Robot'
+     1>c:\users\16150007\documents\github\omnibot\omnibot\robot.cpp(135): error C2065: 'LAW_BATTERY' : undeclared identifier
+     1>c:\users\16150007\documents\github\omnibot\omnibot\robot.cpp(135): error C2051: case expression not constant
      1>Done Building Project "C:\Users\16150007\Documents\GitHub\OmniBot\OmniBot\OmniBot.vcxproj" (build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:01.55
+Time Elapsed 00:00:02.25

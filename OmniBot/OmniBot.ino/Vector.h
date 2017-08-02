@@ -2,7 +2,7 @@
 
 struct Vector
 {
-	Vector(double angle, double val){};
+	Vector(long double angle, long double val){Angle = angle; Val = val;};
 	Vector(){Angle = 0; Val = 0;};
 	double Angle;
 	double Val;
